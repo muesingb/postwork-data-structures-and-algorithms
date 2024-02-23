@@ -1,16 +1,16 @@
-function reverseString(str) {
-  if (typeof str === "string") {
-    let rev_str = []
+// function reverseString(str) {
+//   if (typeof str === "string") {
+//     let rev_str = []
 
-    for (let i=0; i < str.length; i++) {
-      rev_str.unshift(str[i])
-    };
+//     for (let i=0; i < str.length; i++) {
+//       rev_str.unshift(str[i])
+//     };
   
-    return rev_str.join("")
-  } else {
-    return 'only strings allowed'
-  };
-};
+//     return rev_str.join("")
+//   } else {
+//     return 'only strings allowed'
+//   };
+// };
 
 if (require.main === module) {
   // add your own tests in here
@@ -44,5 +44,15 @@ Pseudocode:
 check that type is string
   if it is:
     method 1 - initiate a new array and as you loop through the string, add each to index 0 or unshift?
-    method 2 - split string?
+    method 2 - iterate over string backwards (--i), starting at last index and going down to 0
 */
+
+function reverseString(str) {
+  let reversed = "";
+
+  for (let i = str.length - 1; i > -1; --i) {
+    reversed = reversed + str[i];
+  }
+
+  return reversed;
+}
